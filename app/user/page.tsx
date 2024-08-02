@@ -5,7 +5,9 @@ interface UserType {
   name: string;
 }
 const UserPage = async () => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/users");
+  const res = await fetch("https://jsonplaceholder.typicode.com/users", {
+    cache: "no-store",
+  });
   const userdata: UserType[] = await res.json();
   return (
     <ul>
